@@ -17,7 +17,7 @@ int generateRandomNumber() {
 
     srand(time(nullptr));
 
-    return (rand % 100 + 1);
+    return (rand() % 100 + 1);
 }
 
 
