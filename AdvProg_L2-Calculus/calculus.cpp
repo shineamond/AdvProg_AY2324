@@ -18,9 +18,22 @@ double mySqrt(double x);
     Returns:
         double: cosine of x
 ***/
-double myCos(double x) 
+double myCos(double x)
 {
-    return 0.0;
+    double old_result = 0;
+    double new_result = 1;
+    double i = -1;
+    double operand = 1;
+
+    while (new_result - old_result >= 0.001)
+    {
+        old_result = new_result;
+        i += 2;
+        operand = operand * (-1) / i / (i + 1) * x * x;
+        new_result += operand;
+    }
+
+    return new_result;
 }
 
 /***
@@ -31,7 +44,20 @@ double myCos(double x)
 ***/
 double mySin(double x)
 {
-    return 0.0;
+    double old_result = 0;
+    double new_result = x;
+    double i = 1;
+    double operand = x;
+
+    while(new_result - old_result >= 0.001)
+    {
+        old_result = new_result;
+        i += 2;
+        operand = operand * (-1) / (i - 1) / i * x * x;
+        new_result += operand;
+    }
+
+    return new_result;
 }
 
 
@@ -47,6 +73,14 @@ double mySqrt(double x) {
         exit(1);
     }
 
-    
-    return 0;
+    double old_result = 1;
+    double new_result = old_result - (old_result * old_result - x) / 2 / old_result;
+
+    while(new_result - old_result >= 0.001)
+    {
+        old_result = new_result;
+        new_result = old_result - (old_result * old_result - x) / 2 / old_result;
+    }
+
+    return new_result;
 }
