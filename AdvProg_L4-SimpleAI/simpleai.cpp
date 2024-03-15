@@ -97,10 +97,10 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
     {
         if (occurrences.find(*itr) != occurrences.end())
         {
-            if (occurrences[*itr] > max_frequency)
+            if (occurrences[(*itr)] > max_frequency)
             {
                 answer = *itr;
-                max_frequency = occurrences[*itr];
+                max_frequency = occurrences[(*itr)];
             }
         }
     }
