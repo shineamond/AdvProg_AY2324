@@ -24,12 +24,13 @@ double myCos(double x)
     double new_result = 1;
     double i = -1;
     double operand = 1;
+    double squared_x = x * x;
 
-    while (abs(new_result - old_result) > 0.0001)
+    while (fabs(new_result - old_result) > 0.0001)
     {
         old_result = new_result;
         i += 2;
-        operand = operand * (-1) / i / (i + 1) * x * x;
+        operand = operand * (-1) / i / (i + 1) * squared_x;
         new_result += operand;
     }
 
@@ -48,12 +49,13 @@ double mySin(double x)
     double new_result = x;
     double i = 1;
     double operand = x;
+    double squared_x = x * x;
 
-    while(abs(new_result - old_result) > 0.0001)
+    while(fabs(new_result - old_result) > 0.0001)
     {
         old_result = new_result;
         i += 2;
-        operand = operand * (-1) / (i - 1) / i * x * x;
+        operand = operand * (-1) / (i - 1) / i * squared_x;
         new_result += operand;
     }
 
@@ -76,7 +78,7 @@ double mySqrt(double x) {
     double old_result = 1;
     double new_result = old_result - (old_result * old_result - x) / 2 / old_result;
 
-    while(abs(new_result - old_result) > 0.0001)
+    while(fabs(new_result - old_result) > 0.0001)
     {
         old_result = new_result;
         new_result = old_result - (old_result * old_result - x) / 2 / old_result;
