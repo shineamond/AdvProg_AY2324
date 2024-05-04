@@ -82,11 +82,11 @@ void Painter::randomColor()
 {
     // TODO: set random color
 
-    srand(time(nullptr));
+//    srand(time(nullptr));
     Uint8 red = rand() % 256;
-    srand(time(nullptr));
+//    srand(time(nullptr));
     Uint8 green = rand() % 256;
-    srand(time(nullptr));
+//    srand(time(nullptr));
     Uint8 blue = rand() % 256;
 
     SDL_Color color = {red, green, blue};
