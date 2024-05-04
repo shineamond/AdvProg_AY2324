@@ -29,7 +29,7 @@ Snake::~Snake()
     cherry = 0;
     score = 0;
 
-    SnakeNode * current_node = tail, next_node = nullptr;
+    SnakeNode * current_node = tail, * next_node = nullptr;
     while(current_node != nullptr)
     {
         next_node = current_node -> next;
